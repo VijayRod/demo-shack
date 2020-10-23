@@ -1,6 +1,6 @@
 ## File create
 
-Create and run file as below.
+Create and initialize file with below.
 
 ```
 # File: bash_dns.sh
@@ -30,18 +30,16 @@ Add below script to file for DNS latency issues. File can be run with `./bash_dn
 
 ```
 echo 'hostname: '$(hostname)
+nslookup bing.com
+nslookup google.com
 loops=$(($1+0))
 for ((i=1;i<=$loops;i++))
 do
 	dt=`date -u '+%Y-%m-%dT%H:%M:%SZ'`
 	curl -A `date +"[mycurltime:%Y-%m-%dT%H:%M:%S.%3N]"` -X GET 'https://www.google.com' --silent --output /dev/null -w "$dt status=%{http_code} %{redirect_url} size=%{size_download} time_namelookup=%{time_namelookup} time_connect=%{time_connect} time_appconnect=%{time_appconnect} time_pretransfer=%{time_pretransfer} time_redirect=%{time_redirect} time_starttransfer=%{time_starttransfer} time=%{time_total} num_redirects=%{num_redirects} speed_download=%{speed_download} speed_upload=%{speed_upload} num_connects=%{num_connects} content-type="%{content_type}" "
-	nslookup bing.com
-	nslookup google.com
 	sleep 2
 done
 ```
-
-<br>
 
 ## Reference
 
