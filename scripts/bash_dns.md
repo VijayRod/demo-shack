@@ -7,7 +7,7 @@ Create and initialize file with below.
 # File initialize: chmod +x bash_dns.sh
 ```
 
-## File script for DNS resolution failures
+#### File script for DNS resolution failures
 
 Add below script to file for DNS resolution failures. File can be run with `./bash_dns.sh` or `./bash_dns.sh > /tmp/bash_dns.out`.
 
@@ -24,7 +24,7 @@ nslookup deb.debian.org
 nslookup google.com
 ```
 
-## File script for DNS latency issues
+#### File script for DNS latency issues
 
 Add below script to file for DNS latency issues. File can be run with `./bash_dns.sh 5` or `./bash_dns.sh 5 > /tmp/bash_dns.out`.
 
@@ -41,7 +41,7 @@ do
 done
 ```
 
-## Reference
+#### Reference
 
 Reference script implementation is at https://harrytechnotes.blogspot.com/2019/12/aks-1-five-seconds-latency-when.html .
 
