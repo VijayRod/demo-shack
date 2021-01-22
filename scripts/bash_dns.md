@@ -44,3 +44,16 @@ done
 ## Reference
 
 Reference script implementation is at https://harrytechnotes.blogspot.com/2019/12/aks-1-five-seconds-latency-when.html .
+
+## Manual script
+
+Ref: https://github.com/Azure/AKS/issues/632
+
+```
+# Run a busybox or ubuntu shell inside a kubernetes cluster using something like this:
+kubectl run my-shell --rm -i --tty --image ubuntu -- bash
+
+# Once that shell launches run something like this until delay is observed:
+apt update; apt install -y curl
+for i in `seq 1 50`; do time curl -s google.com > /dev/null; done
+```
